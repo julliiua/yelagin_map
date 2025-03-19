@@ -52,12 +52,4 @@ places.forEach(place => {
             shadowSize: [41, 41]
         }));
     });
-     marker.getPopup().on('open', function() {
-            var popupContent = marker.getPopup().getElement();
-            popupContent.style.backgroundColor = "#f4f4f4"; // Цвет фона всплывающего окна
-            popupContent.style.padding = "15px"; // Отступы внутри окна
-            popupContent.style.borderRadius = "10px"; // Округлые углы
-            popupContent.querySelector('p').style.fontSize = "14px"; // Размер шрифта
-            popupContent.querySelector('h3').style.fontSize = "18px"; // Размер шрифта заголовка
-        });
 });
