@@ -23,12 +23,23 @@ var places = [
 
 // Добавляем маркеры
 places.forEach(place => {
-    const defaultMarker = L.marker(place.coords).addTo(map)
+    const defaultMarker = L.marker(place.coords, {
+        icon: L.divIcon({
+            className: 'default-marker', // Можно задать свой класс для маркера
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34]
+        })
+    }).addTo(map)
         .bindPopup(`<h3>${place.title}</h3><img src="${place.img || ''}" width="150"><p>${place.text}</p>`);
 
+    // Обработчик на клик для смены цвета маркера
     defaultMarker.on('click', function() {
-        this.setStyle({
-            color: 'red', // Изменяем цвет на красный
-        });
+        this.setIcon(L.divIcon({
+            className: 'clicked-marker', // Класс для изменённого маркера
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34]
+        }));
     });
 });

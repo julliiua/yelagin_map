@@ -16,3 +16,18 @@ header {
     width: 100%;
 }
 
+.default-marker {
+    background-color: #3388ff;
+    border-radius: 50%;
+    width: 25px;
+    height: 41px;
+    border: 2px solid #fff;
+}
+
+.clicked-marker {
+    background-color: #ff0000; /* Красный цвет при нажатии */
+    border-radius: 50%;
+    width: 25px;
+    height: 41px;
+    border: 2px solid #fff;
+}
