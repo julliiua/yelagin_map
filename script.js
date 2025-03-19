@@ -46,8 +46,8 @@ places.forEach(place => {
         this.setIcon(L.icon({
             iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/678111-map-marker-512.png', // Картинка для красного маркера
             iconSize: [48, 48], // Размер маркера
-            iconAnchor: [12, 41], // Якорь иконки
-            popupAnchor: [1, -34], // Позиция всплывающего окна
+            iconAnchor: [24, 48], // Якорь иконки
+            popupAnchor: [0, -48], // Позиция всплывающего окна
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
             shadowSize: [41, 41]
         }));
