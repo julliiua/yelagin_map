@@ -86,6 +86,15 @@ var places = [
 // Добавляем маркеры
 places.forEach(place => {
     const marker = L.marker(place.coords).addTo(map)
+        .bindPopup(`
+            <h3>${place.title}</h3>
+            <div style="display: flex; gap: 5px;">
+                <img src="${place.img[0]}" width="150">
+                <img src="${place.img[1]}" width="150">
+            </div>
+            <p>${place.text}</p>
+        `);
+    const marker = L.marker(place.coords).addTo(map)
         .bindPopup(`<h3>${place.title}</h3><img src="${place.img || ''}" width="150"><p>${place.text}</p>`);
 
     marker.on('click', function() {
