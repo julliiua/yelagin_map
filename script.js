@@ -23,6 +23,19 @@ var places = [
 
 // Добавляем маркеры
 places.forEach(place => {
-    L.marker(place.coords).addTo(map)
-        .bindPopup(`<h3>${place.title}</h3><img src="${place.img || ''}" width="150"><p>${place.text}</p>`);
+    let marker = L.circleMarker(place.coords, {
+        color: 'blue',        // Контур синий
+        fillColor: 'lightblue', // Заливка голубая
+        fillOpacity: 0.5,
+        radius: 8
+    }).addTo(map)
+    .bindPopup(`<h3>${place.title}</h3><img src="${place.img || ''}" width="150"><p>${place.text}</p>`);
+
+    // При клике на точку меняем цвет на красный
+    marker.on('click', function() {
+        this.setStyle({
+            color: 'red',        // Красный контур
+            fillColor: 'pink'    // Светло-красная заливка
+        });
+    });
 });
