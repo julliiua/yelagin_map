@@ -8,7 +8,10 @@ body {
 header {
     background: #2f4538;
     color: white;
-    padding: 5px 0;  /* Ограничиваем ширину шапки */
+    padding: 10px 0;
+    width: 600px;  /* Фиксированная ширина */
+    height: 80px;  /* Фиксированная высота (если нужно) */
+    margin: 0 auto;
 }
 
 #map {
